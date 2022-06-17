@@ -37,6 +37,8 @@ module.exports = {
       port: WIKI.config.db.port
     }
 
+    console.log(dbConfig)
+
     // Handle SSL Options
 
     let dbUseSSL = (WIKI.config.db.ssl === true || WIKI.config.db.ssl === 'true' || WIKI.config.db.ssl === 1 || WIKI.config.db.ssl === '1')
