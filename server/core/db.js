@@ -127,6 +127,8 @@ module.exports = {
         process.exit(1)
     }
 
+    console.log(dbConfig)
+
     // Initialize Knex
     this.knex = Knex({
       client: dbClient,
