@@ -82,7 +82,7 @@ module.exports = {
         dbClient = 'pg'
 
         if (dbUseSSL && _.isPlainObject(dbConfig)) {
-          dbConfig.ssl = (sslOptions === true) ? { rejectUnauthorized: true } : sslOptions
+          dbConfig.ssl = (sslOptions === true) ? { rejectUnauthorized: false } : sslOptions
         }
         break
       case 'mariadb':
