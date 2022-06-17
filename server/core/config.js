@@ -55,7 +55,6 @@ module.exports = {
     
     // Parse DB configs here
     const dbConnectionString = process.env.DATABASE_URL;
-    console.log(dbConnectionString);
     const {
       host,
       port,
@@ -71,7 +70,7 @@ module.exports = {
       host,
       port,
       user,
-      password,
+      pass: password,
       db: database,
       ssl
     };
