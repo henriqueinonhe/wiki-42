@@ -29,7 +29,7 @@ module.exports = {
     // Fetch DB Config
 
     let dbClient = null
-    let dbConfig = {
+    let dbConfig = (!_.isEmpty(process.env.DATABASE_URL)) ? process.env.DATABASE_URL : {
       host: WIKI.config.db.host.toString(),
       user: WIKI.config.db.user.toString(),
       password: WIKI.config.db.pass.toString(),
