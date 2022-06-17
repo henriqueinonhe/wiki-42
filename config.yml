@@ -25,7 +25,7 @@ db:
 
   # PostgreSQL / MySQL / MariaDB / MS SQL Server only:
   host: $(DB_HOST)
-  port: 5432
+  port: $(DB_PORT)
   user: $(DB_USER)
   pass: $(DB_PASS)
   db: $(DB_NAME)

@@ -4,6 +4,7 @@ const cfgHelper = require('../helpers/config')
 const fs = require('fs')
 const path = require('path')
 const yaml = require('js-yaml')
+const parsePgConnectionString = require('pg-connection-string');
 
 /* global WIKI */
 
@@ -51,6 +52,26 @@ module.exports = {
     // Merge with defaults
 
     appconfig = _.defaultsDeep(appconfig, appdata.defaults.config)
+    
+    // Parse DB configs here
+    const dbConnectionString = process.env.DB_URL;
+    const {
+      host,
+      port,
+      user,
+      password,
+      database,
+      ssl
+    } = parsePgConnectionString(dbConnectionString);
+
+    appconfig.db = {
+      host,
+      port,
+      user,
+      password,
+      db: database,
+      ssl
+    };
 
     if (appconfig.port < 1 || process.env.HEROKU) {
       appconfig.port = process.env.PORT || 80
