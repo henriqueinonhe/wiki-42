@@ -34,7 +34,7 @@ module.exports = {
       user: WIKI.config.db.user.toString(),
       password: WIKI.config.db.pass.toString(),
       database: WIKI.config.db.db.toString(),
-      port: WIKI.config.db.port
+      port: Number(WIKI.config.db.port)
     }
 
     console.log(dbConfig)
