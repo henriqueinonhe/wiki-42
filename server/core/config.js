@@ -55,6 +55,7 @@ module.exports = {
     
     // Parse DB configs here
     const dbConnectionString = process.env.DB_URL;
+    console.log(dbConnectionString);
     const {
       host,
       port,
@@ -64,6 +65,7 @@ module.exports = {
       ssl
     } = parsePgConnectionString(dbConnectionString);
 
+    
     appconfig.db = {
       host,
       port,
