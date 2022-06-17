@@ -41,7 +41,7 @@ module.exports = {
 
     // Handle SSL Options
 
-    let dbUseSSL = true
+    let dbUseSSL = (WIKI.config.db.ssl === true || WIKI.config.db.ssl === 'true' || WIKI.config.db.ssl === 1 || WIKI.config.db.ssl === '1')
     let sslOptions = null
     if (dbUseSSL && _.isPlainObject(dbConfig) && _.get(WIKI.config.db, 'sslOptions.auto', null) === false) {
       sslOptions = WIKI.config.db.sslOptions

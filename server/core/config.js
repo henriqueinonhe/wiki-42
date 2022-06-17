@@ -72,7 +72,7 @@ module.exports = {
       user,
       pass: password,
       db: database,
-      ssl
+      ssl: true
     };
 
     console.log(appconfig.db)
