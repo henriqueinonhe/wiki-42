@@ -68,14 +68,12 @@ module.exports = {
     appconfig.db = {
       type: "postgres",
       host,
-      port: Number(port),
+      port,
       user,
       pass: password,
       db: database,
       ssl: true
     };
-
-    console.log(appconfig.db)
 
     if (appconfig.port < 1 || process.env.HEROKU) {
       appconfig.port = process.env.PORT || 80
