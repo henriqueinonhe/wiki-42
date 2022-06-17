@@ -54,7 +54,7 @@ module.exports = {
     appconfig = _.defaultsDeep(appconfig, appdata.defaults.config)
     
     // Parse DB configs here
-    const dbConnectionString = process.env.DB_URL;
+    const dbConnectionString = process.env.DATABASE_URL;
     console.log(dbConnectionString);
     const {
       host,
