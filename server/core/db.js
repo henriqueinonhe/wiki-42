@@ -34,10 +34,8 @@ module.exports = {
       user: WIKI.config.db.user.toString(),
       password: WIKI.config.db.pass.toString(),
       database: WIKI.config.db.db.toString(),
-      port: Number(WIKI.config.db.port)
+      port: WIKI.config.db.port
     }
-
-    console.log(dbConfig)
 
     // Handle SSL Options
 
@@ -126,8 +124,6 @@ module.exports = {
         WIKI.logger.error('Invalid DB Type')
         process.exit(1)
     }
-
-    console.log(dbConfig)
 
     // Initialize Knex
     this.knex = Knex({
