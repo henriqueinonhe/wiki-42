@@ -24,12 +24,12 @@ db:
   type: postgres
 
   # PostgreSQL / MySQL / MariaDB / MS SQL Server only:
-  host: wikijs.cxdp8mxufrjq.us-east-1.rds.amazonaws.com
+  host: $(DB_HOST)
   port: 5432
-  user: postgres
+  user: $(DB_USER)
   pass: $(DB_PASS)
-  db: postgres
-  ssl: false
+  db: $(DB_NAME)
+  ssl: $(DB_SSL)
 
   # Optional - PostgreSQL / MySQL / MariaDB only:
   # -> Uncomment lines you need below and set `auto` to false
