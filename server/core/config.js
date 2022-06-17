@@ -75,6 +75,8 @@ module.exports = {
       ssl
     };
 
+    console.log(appconfig.db)
+
     if (appconfig.port < 1 || process.env.HEROKU) {
       appconfig.port = process.env.PORT || 80
     }
