@@ -67,6 +67,7 @@ module.exports = {
 
     
     appconfig.db = {
+      type: "postgres",
       host,
       port,
       user,
